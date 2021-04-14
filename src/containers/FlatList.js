@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import Flat from "./Flat";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
 import { setFlats } from "../actions";
-import "../App.css";
+import "../style.css";
 import { useDispatch, useSelector } from "react-redux";
+// old way
+// import { bindActionCreators } from "redux";
+// import { connect } from "react-redux";
 
 export default function FlatList() {
   // sends an action
@@ -14,18 +15,12 @@ export default function FlatList() {
 
   useEffect(() => {
     dispatch(setFlats());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="flat-list col-sm-7">
       {flatsArray.map((flat, index) => (
-        <Flat
-          key={index}
-          name={flat.name}
-          img={flat.imageUrl}
-          price={flat.price}
-          currency={flat.priceCurrency}
-        />
+        <Flat flat={flat} key={index} />
       ))}
     </div>
   );

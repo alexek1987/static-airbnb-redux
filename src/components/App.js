@@ -1,6 +1,6 @@
-import FlatList from "./containers/FlatList";
-import Map from "./containers/Map";
-import "./App.css";
+import FlatList from "../containers/FlatList";
+import Map from "../containers/Map";
+import "../style.css";
 
 function App() {
   return (

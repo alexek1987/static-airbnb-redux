@@ -1,9 +1,6 @@
-export default function (state, action) {
-  // initial state
-  if (state === undefined) {
-    return [];
-  }
-  // new state
+const initState = [];
+// eslint-disable-next-line
+export default function (state = initState, action) {
   if (action.type === "SET_FLATS") {
     return action.payload;
   } else {
